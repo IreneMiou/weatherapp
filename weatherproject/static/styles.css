@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Otomanopee+One&display=swap');
+
+html {
+    display: block;
+}
+
+body {
+    background-image: url(../static/crossing.jpg);
+    font-family: Shizuru, Courier, monospace;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+input,
+.btn {
+    width: 30em;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 2em;
+    padding: 0.5rem;
+    border-radius: 10em;
+    outline: black;
+}
+
+.weather {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+}
+
+.city {
+    left: 2px;
+    font-family: "Otomanopee One", sans-serif;
+    margin: 3px;
+    padding: 0px;
+    white-space: nowrap;
+}
+
+.temp {
+    width: 70%;
+    height: 220px;
+    line-height: 3;
+    font-family: "Otomanopee One", sans-serif;
+    margin: 3px;
+    padding: 0px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.condition {
+    top: 24%;
+    left: 2em;
+    color: rgb(240, 235, 204);
+    opacity: 0.7;
+    position: absolute;
+    padding: 0.5rem;
+    border-radius: 0px 0px 10px;
+}
+
+.day {
+    right: 40px;
+    position: absolute;
+    bottom: 1px;
+    font-size: 2em;
+    color: rgb(237, 229, 229);
+    font-family: "Otomanopee One", sans-serif;
+    margin: 3px;
+    padding: 0px;
+}
+
+.sunrise {
+    right: 72em;
+    position: fixed;
+    top: 20em;
+    font-size: 22px;
+    color: rgb(237, 229, 229);
+    font-family: Barriecito, cursive;
+}
+
+.sunset {
+    right: 71em;
+    position: fixed;
+    top: 18em;
+    font-size: 22px;
+    color: rgb(237, 229, 229);
+    font-family: Barriecito, cursive;
+}
+
+.quote h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-weight: bold;
+}

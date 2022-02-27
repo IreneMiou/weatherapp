@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litt Weather</title>
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form method="POST">{% csrf_token %}
+          <input type="text" name="city" placeholder=" City">
+        </form>
+    </div>
+
+        <div class="weather">
+            <div class="city">
+                <h1>{{ city }}</h1></div>
+
+          <div class="temp">
+              <h2>{{ temp }}°</h2></div>
+
+            <div class="condition">
+              <p>{{ description }}</p></div>
+
+            <div class="day">
+                <p>{{ day }}</p></div>
+
+            <div>
+                <p class="sunrise">sunRise: {{ sunrise }}.</p></div>
+
+            <div>
+                <p class="sunset">sunSet: {{ sunset }}.</p></div>
+
+    <section class="quote">{{ quote | safe }}</section>
+
+
+
+</div></body></html>
