@@ -14,8 +14,9 @@ quotes = [
 
 
 def getrandomquote():
-    URL = "http://127.0.0.1:8081/city_quotes/"
-    quotes = requests.get(url=URL)
+    API_KEY = "9P88EJr9.6adqVeoPQI25erodSuZ2fMre3MOhpC27"
+    URL = "http://127.0.0.1:8000/city_quotes/"
+    quotes = requests.get(url=URL, headers={"Authorization": "Api-Key " + API_KEY})
     quote_data = quotes.json()["data"]
     quote_texts = []
     for quote in quote_data:
@@ -47,7 +48,7 @@ def index(request):
             "city": city,
             "day": day,
             "description": description,
-            "temp": temp,
+            "temp": round(temp),
             "sunrise": datetime.utcfromtimestamp(sunrise).strftime("%H:%M:%S"),
             "sunset": datetime.utcfromtimestamp(sunset).strftime("%H:%M:%S"),
             "quote": getrandomquote(),

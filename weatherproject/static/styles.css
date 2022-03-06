@@ -79,7 +79,7 @@ h2 {
 .sunrise {
     right: 72em;
     position: fixed;
-    top: 20em;
+    top: 18em;
     font-size: 22px;
     color: rgb(237, 229, 229);
     font-family: Barriecito, cursive;
@@ -88,7 +88,7 @@ h2 {
 .sunset {
     right: 71em;
     position: fixed;
-    top: 18em;
+    top: 16em;
     font-size: 22px;
     color: rgb(237, 229, 229);
     font-family: Barriecito, cursive;
@@ -100,4 +100,11 @@ h2 {
     margin-block-start: 1em;
     margin-block-end: 1em;
     font-weight: bold;
+
+}
+
+section {
+    width: 1500px;
+    margin-top: 120px;
+    margin-right: 50px;
 }
