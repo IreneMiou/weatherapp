@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Otomanopee+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&family=Otomanopee+One&family=Roboto+Mono&display=swap');
 
 html {
     display: block;
@@ -6,7 +6,7 @@ html {
 
 body {
     background-image: url(../static/crossing.jpg);
-    font-family: Shizuru, Courier, monospace;
+    font-family: Roboto, Courier, monospace;
     height: 100vh;
     background-attachment: fixed;
     background-size: cover;
