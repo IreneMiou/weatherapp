@@ -3,14 +3,15 @@ from django.shortcuts import render
 import requests
 from datetime import datetime, date
 import random
+from weatherproject.settings import API_KEY, API_URL
 
 
 def getrandomquote():
-    API_KEY = "9P88EJr9.6adqVeoPQI25erodSuZ2fMre3MOhpC27"
-    URL = "http://127.0.0.1:8001/city_quotes/"
 
     try:
-        quotes = requests.get(url=URL, headers={"Authorization": "Api-Key " + API_KEY})
+        quotes = requests.get(
+            url=API_URL, headers={"Authorization": "Api-Key " + API_KEY}
+        )
     except:
         return "Our API Server is down so imagine there is a fancy quote here.. "
 

@@ -128,3 +128,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+if os.path.exists(os.path.join(BASE_DIR, "weatherproject/local_settings.py")):
+    print("found local settings")
+    try:
+        from weatherproject.local_settings import *
+    except ImportError as e:
+        print(e)
+else:
+    print("no local settings")
