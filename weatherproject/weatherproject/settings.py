@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "rest_framework_api_key",
+    "rest_framework.authtoken",
     "weatherapp",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -128,6 +132,47 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+REST_FRAMEWORK = {
+    "EXCEPTION_HANDLER": "rest_framework_json_api.exceptions.exception_handler",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework_json_api.pagination.JsonApiPageNumberPagination",
+    "DEFAULT_PARSER_CLASSES": (
+        "rest_framework_json_api.parsers.JSONParser",
+        "rest_framework.parsers.FormParser",
+        "rest_framework.parsers.MultiPartParser",
+    ),
+    "DEFAULT_RENDERER_CLASSES": (
+        "rest_framework_json_api.renderers.JSONRenderer",
+        # If you're performance testing, you will want to use the browseable API
+        # without forms, as the forms can generate their own queries.
+        # If performance testing, enable:
+        # 'example.utils.BrowsableAPIRendererWithoutForms',
+        # Otherwise, to play around with the browseable API, enable:
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ),
+    "DEFAULT_METADATA_CLASS": "rest_framework_json_api.metadata.JSONAPIMetadata",
+    "DEFAULT_FILTER_BACKENDS": (
+        "rest_framework_json_api.filters.QueryParameterValidationFilter",
+        "rest_framework_json_api.filters.OrderingFilter",
+        "rest_framework_json_api.django_filters.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+    ),
+    "SEARCH_PARAM": "filter[search]",
+    "TEST_REQUEST_RENDERER_CLASSES": (
+        "rest_framework_json_api.renderers.JSONRenderer",
+    ),
+    "TEST_REQUEST_DEFAULT_FORMAT": "vnd.api+json",
+    # "DEFAULT_PERMISSION_CLASSES": [
+    #     "rest_framework_api_key.permissions.HasAPIKey",
+    # ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+}
+
 
 if os.path.exists(os.path.join(BASE_DIR, "weatherproject/local_settings.py")):
     print("found local settings")
